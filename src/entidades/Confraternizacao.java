@@ -23,6 +23,8 @@ public class Confraternizacao
     private int id;
     private String nome;
     private Date data;
+    
+    private BigDecimal total = new BigDecimal(0);
 
     //Associação UM-OU-MUITOS itens  
     private ArrayList<Iten> items = new ArrayList<Iten>();
@@ -118,31 +120,32 @@ public class Confraternizacao
        
     public int getQtdeConvidados()
     {	
-	return getConvidados().size();
+	return  this.getConvidados().size();
     }
             
     public int getQtdItens()
     {	
-	return getItems().size();
+	return this.getItems().size();
     }
 
     public BigDecimal getTotal()
     {
-
-	BigDecimal bd = new BigDecimal(0);
-
-	for (Iten item : getItems())
+	for (Iten item : this.getItems())
 	{
-	    bd.add(item.getProduto().getPreco());
+	   this.total.add(item.getSubTotal());
 	}
+	
+	return this.total;
 
-	return bd.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+	//return total.setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 
     @Override
     public String toString()
     {
-	return "Confraternizacao{" + "id=" + id + ", nome=" + nome + ", data=" + data + ", items=" + items + ", convidados=" + convidados + '}';
+	return "Confraternizacao{" + "id=" + id + ", nome=" + nome + ", data=" + data + ", total=" + total + ", items=" + items + ", convidados=" + convidados + '}';
     }
+
+    
 
 }

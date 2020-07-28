@@ -18,7 +18,7 @@ import servicos.Servico;
  *
  * @author Andre
  */
-public class Program
+public class Program2
 {
 
     public static void main(String[] args)
@@ -57,35 +57,33 @@ public class Program
 	    //CRIA LISTA DE CONVIDADOS:
 	    ArrayList<Pessoa> convidados = new ArrayList<Pessoa>();
 	    convidados = new Servico().listaDeCovidados(convidados);
+	    //VINCULO CONVIDADO NO EVENTO
+	    for (Pessoa convidado : convidados)
+	    {
+		evento.getConvidados().add(convidado);
+	    }
+
 	    //VINCULO EVENTO NO CONVIDADO
 	    for (Pessoa convidado : convidados)
 	    {
 		convidado.getEventos().add(evento);
 	    }
 
-	    //VINCULO CONVIDADO NO EVENTO
-	    for (Pessoa convidado : convidados)
-	    {
-		evento.getConvidados().add(convidado);
-	    }    
-	       
 	    //CRIA LISTA DE ITENS:
-	    
 	    ArrayList<Iten> itens = new ArrayList<Iten>();
 	    itens = new Servico().listaDeItens(itens);
-	    
+
 	    //VINCULO ITENS NO EVENTO
 	    for (Iten item : itens)
 	    {
 		evento.getItems().add(item);
 	    }
-	    	    
 
 	    //SALVA EVENTO NO BDFAKE:
 	    ConfraternizacaoDAO.add(evento);
-	    
-	   new Servico().mostraEvento(evento);
-	    
+
+	    //Mostra evento:
+	    new Servico().mostraEvento(evento);
 
 	    System.out.println("\n\nDeseja organizar um novo evento? S/N ");
 	    continuar = scan.next().toUpperCase();
@@ -97,12 +95,6 @@ public class Program
 
 	//Mostra tabela dos Eventos:
 	//ConfraternizacaoDAO.printAll(bd.getTB_EVENTO());
-	
-	
-	
-
     }
-    
-    
 
 }

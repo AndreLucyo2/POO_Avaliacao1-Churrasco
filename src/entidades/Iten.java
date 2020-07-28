@@ -23,19 +23,19 @@ public class Iten
     private Produto produto;
 
     //Associação
-    private Confraternizacao churrasco;
+    private Confraternizacao evento;
 
     public Iten()
     {
     }
 
-    public Iten(int id, BigDecimal quantidade, BigDecimal preco, Produto produto, Confraternizacao churrasco)
+    public Iten(int id, BigDecimal quantidade, BigDecimal preco, Produto produto, Confraternizacao evento)
     {
 	this.id = id;
 	this.quantidade = quantidade;
 	this.preco = preco;
 	this.produto = produto;
-	this.churrasco = churrasco;
+	this.evento = evento;
     }
 
     public int getId()
@@ -78,14 +78,14 @@ public class Iten
 	this.produto = produto;
     }
 
-    public Confraternizacao getChurrasco()
+    public Confraternizacao getEvento()
     {
-	return churrasco;
+	return evento;
     }
 
-    public void setChurrasco(Confraternizacao churrasco)
+    public void setEvento(Confraternizacao evento)
     {
-	this.churrasco = churrasco;
+	this.evento = evento;
     }
 
     public BigDecimal getSubTotal()
@@ -99,7 +99,7 @@ public class Iten
     @Override
     public String toString()
     {
-	return "Itens{" + "id=" + id + ", quantidade=" + quantidade + ", preco=" + preco + ", produto=" + produto + ", churrasco=" + churrasco + '}';
+	return "Itens{" + "id=" + id + ", quantidade=" + quantidade + ", preco=" + preco + ", produto=" + produto + ", evento=" + evento + '}';
     }
 
 }
