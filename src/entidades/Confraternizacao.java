@@ -23,7 +23,6 @@ public class Confraternizacao
     private int id;
     private String nome;
     private Date data;
-    
     private BigDecimal total = new BigDecimal(0);
 
     //Associação UM-OU-MUITOS itens  
@@ -129,21 +128,20 @@ public class Confraternizacao
     }
 
     public BigDecimal getTotal()
-    {
+    {	
+	
 	for (Iten item : this.getItems())
 	{
-	   this.total.add(item.getSubTotal());
+	  this.total = this.total.add(item.getSubTotal());
 	}
 	
 	return this.total;
-
-	//return total.setScale(2, BigDecimal.ROUND_HALF_EVEN);
     }
 
     @Override
     public String toString()
     {
-	return "Confraternizacao{" + "id=" + id + ", nome=" + nome + ", data=" + data + ", total=" + total + ", items=" + items + ", convidados=" + convidados + '}';
+	return "Confraternizacao{" + "id=" + id + ", nome=" + nome + ", data=" + data + ", items=" + items + ", convidados=" + convidados + '}';
     }
 
     

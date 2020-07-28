@@ -154,12 +154,10 @@ public class Servico
 
     public static void mostraEvento(Confraternizacao evento)
     {
-	System.out.println("\n\n\n");
 	System.out.println("================================================================");
 	System.out.println("============              EVENTO             ===================");
 	System.out.println("================================================================");
 
-	System.out.println("\n");
 	System.out.println("----------------------------------------------------------------");
 	System.out.println("                       DADOS DO EVENDO                          ");
 	System.out.println("----------------------------------------------------------------");
@@ -171,14 +169,21 @@ public class Servico
 
 	System.out.println("\n");
 	System.out.println("----------------------------------------------------------------");
-	System.out.println("                       LISTA DE CONVIADOS                       ");
+	System.out.println("                       LISTA DE CONVIDADOS                       ");
 	System.out.println("----------------------------------------------------------------");
 
-	System.out.println("em desenvolvimento!...");
+	//DADOS DOS INTENS:
+	for (Pessoa pes : evento.getConvidados())
+	{
+	    System.out.println("NOME       :" + pes.getNome());
+	    System.out.println("IDADE      :" + pes.getIdade());
+	    System.out.println("SEXO       :" + pes.getSexo());
+	    System.out.println("===================================");
+	}
+
 	System.out.println("\n");
-
 	System.out.println("----------------------------------------------------------------");
-	System.out.println("                       LISTA DE COMPRA                          ");
+	System.out.println("                       LISTA DE COMPRAS                         ");
 	System.out.println("----------------------------------------------------------------");
 
 	//DADOS DOS INTENS:
@@ -186,7 +191,7 @@ public class Servico
 	{
 	    System.out.println("PRODUTO       :" + item.getProduto().getNome());
 	    System.out.println("QUANTIDADE    :" + item.getQuantidade().setScale(2, BigDecimal.ROUND_HALF_EVEN));
-	    System.out.println("PREÇO UNIT.   :" + item.getPreco().setScale(2, BigDecimal.ROUND_HALF_EVEN));
+	    System.out.println("PREÇO UNIT.   :R$" + item.getPreco().setScale(2, BigDecimal.ROUND_HALF_EVEN));
 	    System.out.println("");
 	    System.out.println("TOTAL DO ITEM :R$" + item.getSubTotal().setScale(2, BigDecimal.ROUND_HALF_EVEN));
 	    System.out.println("===================================");
