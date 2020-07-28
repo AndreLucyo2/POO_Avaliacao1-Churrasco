@@ -150,4 +150,26 @@ public class Servico
 	
     }
     
+        public static void mostraEvento(Confraternizacao evento)
+    {
+        System.out.println("\n\n\n");
+	System.out.println("================================================================");
+	System.out.println("============              EVENTO             ===================");
+	System.out.println("================================================================");
+		
+	String nome = evento.getNome();
+	String data = evento.getData().toString();
+	String qtdConv = evento.getQtdeConvidados()+"";
+	String qtdItens = evento.getQtdItens()+"";
+	String strTotal = String.format("%10.10s", evento.getTotal() + "");
+	
+	
+	System.out.println("================================================================");
+			
+	System.out.print(String.format("|%-8.8s|", " NOMEDO EVENTO:"));
+	System.out.print(String.format("|%-8.8s|", nome));
+		
+    }
+
+    
 }
