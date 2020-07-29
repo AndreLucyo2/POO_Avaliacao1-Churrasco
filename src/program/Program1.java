@@ -29,8 +29,9 @@ public class Program1
 	Pessoa convidado1 = new Pessoa(1, "Andre", "Masculino", 37);
 	Pessoa convidado2 = new Pessoa(2, "Maria", "Feminino", 23);
 	
-	convidado1.getEventos().add(evento);
-	convidado2.getEventos().add(evento);
+	//ADICIONA OS CONVIDADSOS NO 
+	//convidado1.getEventos().add(evento);
+	//convidado2.getEventos().add(evento);
 	
 	evento.getConvidados().add(convidado1);
 	evento.getConvidados().add(convidado2);
@@ -49,9 +50,7 @@ public class Program1
 	evento.getItems().add(item1);
 	evento.getItems().add(item2);
 	evento.getItems().add(item3);
-	evento.getItems().add(item4);
-	
-	System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>"+evento.getTotal());  
+	evento.getItems().add(item4); 
 	
 	//Mostra evento:
 	new Servico().mostraEvento(evento);
